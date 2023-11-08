@@ -1,0 +1,29 @@
+{
+  "name": "nix-embedded-langs",
+  "publisher": "xxori",
+  "displayName": "nix-embedded-langs",
+  "description": "Nix syntax highlighting with support for embedding other languages",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/injection.json",
+        "scopeName": "embedded-string.injection",
+        "injectTo": ["source.nix"],
+        "embeddedLanguages": {
+          "source.lua": "lua",
+          "meta.embedded.block.lua": "lua",
+          "source.shell": "shellscript",
+          "meta.embedded.block.shellscript": "shellscript"
+        }
+      }
+    ]
+  }
+}

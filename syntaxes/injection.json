@@ -1,0 +1,34 @@
+{
+    "scopeName": "embedded-string.injection",
+    "injectionSelector": "L:string.quoted.other.nix",
+    "patterns": [
+      {
+        "include": "#lua-code-block"
+      },
+      {
+        "include": "#shellscript-code-block"
+      }
+    ],
+    "repository": {
+      "lua-code-block": {
+        "begin": "\\s*--\\s*lua",
+        "end": "\\s*--\\s*/\\s*lua",
+        "name": "meta.embedded.block.lua",
+        "patterns": [
+          {
+            "include": "source.lua"
+          }
+        ]
+      },
+      "shellscript-code-block": {
+        "begin": "\\s*#\\s*sh",
+        "end": "\\s*#\\s*/\\s*sh",
+        "name": "meta.embedded.block.shellscript",
+        "patterns": [
+          {
+            "include": "source.shell"
+          }
+        ]
+      }
+    }
+  }
